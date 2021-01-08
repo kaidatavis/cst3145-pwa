@@ -13,8 +13,12 @@
             margin: 20px;
             text-align: center;
         }
-        
     </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        };
+    </script>
 </head>
 
 <body>
@@ -93,7 +97,8 @@
 
                 <p><input type="checkbox" id="gift" value="true" v-model="order.gift" v-bind:true-value="order.sendGift"
                         v-bind:false-value="order.dontSendGift">
-                    <label for="gift">Ship As Gift?</label></p>
+                    <label for="gift">Ship As Gift?</label>
+                </p>
 
                 <p>
                     <input type="radio" id="home" value="Home" v-model="order.method">
